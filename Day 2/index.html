@@ -126,6 +126,7 @@
             </p>
         )
         const techs = ['HTML','CSS','JavaScript']
+        const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
 
         const main = (
             <main>
@@ -137,7 +138,7 @@
                         </strong>
                         :
                     </p>
-                    <ul>{techs}</ul>
+                    <ul>{techsFormatted}</ul>
                     {personAge}
                 </div>
             </main>
