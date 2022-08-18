@@ -95,17 +95,37 @@
     <script type="text/babel">
         const rootElement = document.querySelector('.root')
 
+        const welcome = 'Welcome to 30 Days Of React'
+        const title = 'Getting Started React'
+        const subtitle = 'JavaScript Library'
+        const author = {
+            firstName: 'Chandler',
+            lastName: 'Ngo',
+        }
+        const date = 'Aug 18, 2022'
+
         const header = (
             <header>
                 <div className='header-wrapper'>
-                    <h1>Welcome to 30 Days Of React</h1>
-                    <h2>Getting Started React</h2>
-                    <h3>JavaScript Library</h3>
-                    <p>Chandler Ngo</p>
-                    <small>8/18/2022</small>
+                    <h1>{welcome}</h1>
+                    <h2>{title}</h2>
+                    <h3>{subtitle}</h3>
+                    <p>{author.firstName} {author.lastName}</p>
+                    <small>{date}</small>
                 </div>
             </header>
         )
+        
+        const yearBorn = 2004
+        const currentYear = new Date().getFullYear()
+        const age = currentYear - yearBorn
+        const personAge = (
+            <p>
+                {' '}
+                {author.firstName} {author.lastName} is {age} years old
+            </p>
+        )
+        const techs = ['HTML','CSS','JavaScript']
 
         const main = (
             <main>
@@ -117,25 +137,24 @@
                         </strong>
                         :
                     </p>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JS</li>
-                    </ul>
+                    <ul>{techs}</ul>
+                    {personAge}
                 </div>
             </main>
         )
 
+        const copyRight = 'Copyright 2022'
+
         const footer = (
             <footer>
                 <div className='footer-wrapper'>
-                    <p>Copyright 2022</p>
+                    <p>{copyRight}</p>
                 </div>
             </footer>
         )
 
         const app = (
-            <div>
+            <div className='app'>
                 {header}
                 {main}
                 {footer}
