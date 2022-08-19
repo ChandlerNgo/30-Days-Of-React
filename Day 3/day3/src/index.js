@@ -1,5 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client';
+import chandlerImage from './images/chandlerngo.jpg'
+
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 
@@ -36,6 +38,12 @@ const personAge = (
 const techs = ['HTML','CSS','JavaScript']
 const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
 
+const user = (
+  <div>
+    <img className='profile-picture' src={chandlerImage} alt='Chandler Image'></img>
+  </div>
+)
+
 const main = (
     <main>
         <div className='main-wrapper'>
@@ -48,6 +56,7 @@ const main = (
             </p>
             <ul>{techsFormatted}</ul>
             {personAge}
+            {user}
         </div>
     </main>
 )
