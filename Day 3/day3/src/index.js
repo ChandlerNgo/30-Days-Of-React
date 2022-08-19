@@ -1,17 +1,74 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import { createRoot } from 'react-dom/client';
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const welcome = 'Welcome to 30 Days Of React'
+const title = 'Getting Started React'
+const subtitle = 'JavaScript Library'
+const author = {
+    firstName: 'Chandler',
+    lastName: 'Ngo',
+}
+const date = 'Aug 18, 2022'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const header = (
+    <header>
+        <div className='header-wrapper'>
+            <h1>{welcome}</h1>
+            <h2>{title}</h2>
+            <h3>{subtitle}</h3>
+            <p>{author.firstName} {author.lastName}</p>
+            <small>{date}</small>
+        </div>
+    </header>
+)
+
+const yearBorn = 2004
+const currentYear = new Date().getFullYear()
+const age = currentYear - yearBorn
+const personAge = (
+    <p>
+        {' '}
+        {author.firstName} {author.lastName} is {age} years old
+    </p>
+)
+const techs = ['HTML','CSS','JavaScript']
+const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
+
+const main = (
+    <main>
+        <div className='main-wrapper'>
+            <p>
+                Prerequsites to get started with {' '}
+                <strong>
+                    <em>React</em>
+                </strong>
+                :
+            </p>
+            <ul>{techsFormatted}</ul>
+            {personAge}
+        </div>
+    </main>
+)
+
+const copyRight = 'Copyright 2022'
+
+const footer = (
+    <footer>
+        <div className='footer-wrapper'>
+            <p>{copyRight}</p>
+        </div>
+    </footer>
+)
+
+const app = (
+    <div className='app'>
+        {header}
+        {main}
+        {footer}
+    </div>
+)
+//   const jsxElement = <h1>This is a JSX element</h1>
+
+root.render(app);
