@@ -96,6 +96,22 @@ const footer = (
   </footer>
 )
 
+const skills = ['Python','RestAPI','React','HTML','CSS','JS','Django','Docker','Git','MySQL','FalconAPI']
+const skillsFormatted = skills.map((skill) => <p className='skill' key={skill}>{skill}</p>)
+
+const usercard = (
+  <div className='user-card'>
+    <img src={chandlerImage} alt='Chandler'></img>
+    <h1>Chandler Ngo *checkmark*</h1>
+    <p className='role'>Software Developer, Round Rock, Texas</p>
+    <h1>Skills</h1>
+    <div className='skills'>
+      {skillsFormatted}
+    </div>
+    <p className='join-date'>Joined on Aug 18th, 2022</p>
+  </div>
+)
+
 const app = (
   <div className='app'>
     {header}
@@ -107,6 +123,7 @@ const app = (
 const exercise = (
   <div>
     {subscribe}
+    {usercard}
     {frontend_technologies}
   </div>
 )
