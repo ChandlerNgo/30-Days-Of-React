@@ -112,7 +112,7 @@ const usercard = (
   </div>
 )
 
-const app = (
+const App = () => (
   <div className='app'>
     {header}
     {main}
@@ -120,8 +120,9 @@ const app = (
   </div>
 )
 
-const exercise = (
+const Exercise = () => (
   <div>
+    <App/>
     {subscribe}
     {usercard}
     {frontend_technologies}
@@ -129,4 +130,4 @@ const exercise = (
 )
 //   const jsxElement = <h1>This is a JSX element</h1>
 
-root.render(exercise);
+root.render(<Exercise/>);
