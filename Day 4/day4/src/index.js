@@ -124,7 +124,7 @@ const hexaColor = () => {
 
 const Colors = () => {
   let color = hexaColor()
-  let style = {backgroundColor: color};
+  let style = {backgroundColor: color, textAlign: 'center', padding: '15px', margin: '2px', color:'white',fontWeight:'bold'};
   return <div className='color' style={style}>{color}</div>
 }
 
