@@ -112,6 +112,33 @@ const usercard = (
   </div>
 )
 
+const hexaColor = () => {
+  let str = '0123456789abcdef'
+  let color = ''
+  for (let i = 0; i < 6; i++) {
+    let index = Math.floor(Math.random() * str.length)
+    color += str[index]
+  }
+  return '#' + color
+}
+
+const Colors = () => {
+  let color = hexaColor()
+  let style = {backgroundColor: color};
+  return <div className='color' style={style}>{color}</div>
+}
+
+const ListofColors = () => {
+  return <div>
+    <Colors/>
+    <Colors/>
+    <Colors/>
+    <Colors/>
+    <Colors/>   
+  </div>
+  
+}
+
 const App = () => (
   <div className='app'>
     {header}
@@ -121,11 +148,12 @@ const App = () => (
 )
 
 const Exercise = () => (
-  <div>
-    <App/>
+    <div>
+    <ListofColors/>
+    {/* <App/>
     {subscribe}
     {usercard}
-    {frontend_technologies}
+    {frontend_technologies} */}
   </div>
 )
 //   const jsxElement = <h1>This is a JSX element</h1>
