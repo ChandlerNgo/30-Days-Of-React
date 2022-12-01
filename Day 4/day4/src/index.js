@@ -147,13 +147,96 @@ const App = () => (
   </div>
 )
 
+const isPrime = num => {
+  for(let i = 2, s = Math.sqrt(num); i <= s; i++)
+      if(num % i === 0) return false; 
+  return num > 1;
+}
+
+var backgroundColor = {}
+const Number = ({number}) => {
+  if(isPrime(number) === true){
+    backgroundColor = {backgroundColor:"#ace1e8"}
+  }
+  else if (number % 2 === 0){
+    backgroundColor = {backgroundColor:"#aaa5f2"}
+  }
+  else{
+    backgroundColor = {backgroundColor:"#7aa7f0"}
+  }
+  return <div id="square" style={backgroundColor}>{number}</div>
+}
+
+const Numbers = ({ numbers }) => {
+  const numberList = numbers.map((number) => (<Number key = {number} number = {number}/>))
+  return <div id="calendar">{numberList}</div>
+} 
+
+const Color = ({ color }) => {
+  backgroundColor = {backgroundColor:color}
+  return <div id="square" style={backgroundColor}>{color}</div>
+}
+
+const ColorSquare = ({ numbers }) => {
+  const colorList = numbers.map((number) => (<Color key={number} color={hexaColor()}/>))
+  return <div id="calendar">{colorList}</div>
+}
+
+// const countries = [
+//   { name: 'Finland', city: 'Helsinki' },
+//   { name: 'Sweden', city: 'Stockholm' },
+//   { name: 'Denmark', city: 'Copenhagen' },
+//   { name: 'Norway', city: 'Oslo' },
+//   { name: 'Iceland', city: 'Reykjavík' },
+// ]
+
+// // Country component
+// const Country = ({ country: { name, city } }) => {
+//   return (
+//     <div>
+//       <h1>{name}</h1>
+//       <small>{city}</small>
+//     </div>
+//   )
+// }
+
+// // countries component
+// const Countries = ({ countries }) => {
+//   const countryList = countries.map((country) => (
+//     <Country key={country.name} country={country} />
+//   ))
+//   return <div>{countryList}</div>
+// }
+const numbers = [0,1,2,3,4,5,6,7]
+const number1 = [8,9,10,11,12,13,14,15]
+const number2 = [16,17,18,19,20,21,22,23]
+const number3 = [24,25,26,27,28,29,30,31]
+
 const Exercise = () => (
-    <div>
-    <ListofColors/>
-    {/* <App/>
+  <div>
+    {/* day 5 stuff */}
+    
+    {/* <h1 id="title">Numbers</h1>
+    <div id="number"> */}
+      {/* <Numbers numbers={numbers}/>
+      <Numbers numbers={number1}/>
+      <Numbers numbers={number2}/>
+      <Numbers numbers={number3}/> */}
+      {/* <ColorSquare numbers={numbers}/>
+      <ColorSquare numbers={number1}/>
+      <ColorSquare numbers={number2}/>
+      <ColorSquare numbers={number3}/>
+
+    </div> */}
+    
+    {/* <Countries countries={countries} /> */}
+    {/* <ListofColors/>
+
+    // day 4 stuff
+    <App/>
     {subscribe}
     {usercard}
-    {frontend_technologies} */}
+    {frontend_technologies}  */}
   </div>
 )
 //   const jsxElement = <h1>This is a JSX element</h1>
